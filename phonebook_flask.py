@@ -21,6 +21,18 @@ def add_contact():
         title = "Add New Entry"
     )
 
+@app.route("/submit_new_entry", methods = ["POST"])
+def submit_form():
+    name = request.form.get('name')
+    phone_number = request.form.get("phone_number")
+    email = request.form.get("email")
+    db.insert(
+        'phonebook',
+        name = name,
+        phone_number = phone_number,
+        email = email
+    )
+    return redirect("/")
 
 
 if __name__ == '__main__':
