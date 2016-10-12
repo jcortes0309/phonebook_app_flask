@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Add a form page which takes input from the user to create a new entry in the phone book. It should have at least the fields:
+  name
+  phone number
+  email
+The form's action attribute should point to /submit_new_entry - you will write the handler for it in the next step. This page should be displayed at the URL: /new_entry. -->
+{% extends "layout.html" %}
+
+{% block body %}
+<form class="" action="/submit_new_entry" method="POST">
+  <p>
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" value="">
+  </p>
+  <p>
+    <label for="phone_number">Phone Number: </label><br>
+    <input type="text" name="phone_number" value="">
+  </p>
+  <p>
+    <label for="email">Email: </label><br>
+    <input type="text" name="email" value="">
+  </p>
+  <p>
+    <button type="submit" name="submit_new_entry">Add Entry</button>
+  </p>
+</form>
+{% endblock %}
