@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- Write a web application that renders all the phone book entries in your phone book database as an unordered list (ul) at the root URL: /. -->
+
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>{{ title }}</h1>
+<hr>
+<ul>
+  {% for contact in contact_list %}
+    <p>
+      <li><b>Contact Name: </b>{{ contact.name }}</li>
+      <li><b>Phone Number: </b>{{ contact.phone_number }}</li>
+      <li><b>Email: </b>{{ contact.email }}</li>
+    </p>
+  {% endfor %}
+</ul>
+{% endblock %}
