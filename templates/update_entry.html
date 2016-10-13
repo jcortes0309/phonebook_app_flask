@@ -27,7 +27,10 @@
           <input type="text" class="form-control" name="email" value="{{ contact_list[0].email }}">
         </div>
         <p>
-          <button type="submit" class="btn btn-default btn-block" name="submit_new_entry">Update Entry</button>
+          <button type="submit" class="btn btn-success btn-block" name="action" value="update">Update Entry</button>
+        </p>
+        <p>
+          <button type="submit" class="btn btn-danger btn-block" name="action" value="delete">Delete Entry</button>
         </p>
       </form>
       <div class="col-md-3">
