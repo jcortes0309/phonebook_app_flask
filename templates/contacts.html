@@ -15,9 +15,10 @@
       <ul>
         {% for contact in contact_list %}
           <p>
-            <li><b>Contact Name: </b>{{ contact.name }}</li>
+            <li><b>Contact Name: </b>{{ contact.name }} </li>
             <li><b>Phone Number: </b>{{ contact.phone_number }}</li>
             <li><b>Email: </b>{{ contact.email }}</li>
+            <a href="/update_entry?id={{ contact.id }}">Update Entry</a>
           </p>
         {% endfor %}
       </ul>

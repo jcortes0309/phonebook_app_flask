@@ -23,7 +23,7 @@ def add_contact():
 
 @app.route("/submit_new_entry", methods = ["POST"])
 def submit_form():
-    name = request.form.get('name')
+    name = request.form.get("name")
     phone_number = request.form.get("phone_number")
     email = request.form.get("email")
     db.insert(
@@ -33,6 +33,18 @@ def submit_form():
         email = email
     )
     return redirect("/")
+
+@app.route("/update_entry", methods = ["GET"])
+def update_entry():
+    id = request.args.get('id')
+    contact_list = db.query("select * from phonebook where id = %s;" % id).namedresult()
+
+    return render_template(
+        "update_entry.html",
+        title = "Update Entry",
+        contact_list = contact_list
+    )
+
 
 
 if __name__ == '__main__':
