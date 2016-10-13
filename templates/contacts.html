@@ -4,15 +4,27 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<h1>{{ title }}</h1>
-<hr>
-<ul>
-  {% for contact in contact_list %}
-    <p>
-      <li><b>Contact Name: </b>{{ contact.name }}</li>
-      <li><b>Phone Number: </b>{{ contact.phone_number }}</li>
-      <li><b>Email: </b>{{ contact.email }}</li>
-    </p>
-  {% endfor %}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+      <h1>{{ title }}</h1>
+      <hr>
+      <ul>
+        {% for contact in contact_list %}
+          <p>
+            <li><b>Contact Name: </b>{{ contact.name }}</li>
+            <li><b>Phone Number: </b>{{ contact.phone_number }}</li>
+            <li><b>Email: </b>{{ contact.email }}</li>
+          </p>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>
 {% endblock %}
