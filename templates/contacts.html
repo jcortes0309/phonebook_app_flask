@@ -12,16 +12,38 @@
     <div class="col-md-6">
       <h1>{{ title }}</h1>
       <hr>
-      <ul>
+      <table>
+        <tr>
+          <th>
+            Contact Name
+          </th>
+          <th>
+            Phone Number
+          </th>
+          <th>
+            Email
+          </th>
+          <th>
+
+          </th>
+        </tr>
         {% for contact in contact_list %}
-          <p>
-            <li><b>Contact Name: </b>{{ contact.name }} </li>
-            <li><b>Phone Number: </b>{{ contact.phone_number }}</li>
-            <li><b>Email: </b>{{ contact.email }}</li>
+        <tr>
+          <td>
+            {{ contact.name }}
+          </td>
+          <td>
+            {{ contact.phone_number }}
+          </td>
+          <td>
+            {{ contact.email }}
+          </td>
+          <td>
             <a href="/update_entry?id={{ contact.id }}">Update Entry</a>
-          </p>
+          </td>
+        </tr>
         {% endfor %}
-      </ul>
+      </table>
     </div>
     <div class="col-md-3">
 
