@@ -44,7 +44,22 @@ def update_entry():
         title = "Update Entry",
         contact_list = contact_list
     )
-
+    
+@app.route("/submit_update_entry", methods = ["POST"])
+def submit_update_form():
+    id = request.form.get("id")
+    name = request.form.get("name")
+    phone_number = request.form.get("phone_number")
+    email = request.form.get("email")
+    db.update(
+        'phonebook', {
+            'id': id,
+            'name': name,
+            'phone_number': phone_number,
+            'email': email
+        }
+    )
+    return redirect("/")
 
 
 if __name__ == '__main__':
